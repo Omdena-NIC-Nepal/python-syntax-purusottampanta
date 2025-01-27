@@ -74,7 +74,12 @@ def arithmetic_ops(a, b):
     Returns:
         dict: Results of arithmetic operations
     """
-    return {"sum": a+b, "difference": a-b, "product": a*b, "quotient" : a/b}
+    try:
+        quotient = a / b
+    except ZeroDivisionError:
+        quotient = "Error: Division by zero is not allowed."
+
+    return {"sum": a+b, "difference": a-b, "product": a*b, "quotient" : quotient }
 
 def logical_ops(x, y):
     """
